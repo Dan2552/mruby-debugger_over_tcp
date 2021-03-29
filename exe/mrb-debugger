@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "mruby-debugger_over_tcp/server"
+
+begin
+  server = DebuggerOverTCP::Server.new(3465)
+  server.start!
+rescue Interrupt
+end
+
